@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TSTuring2015.Speech.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DataServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">demo.thinkingsolutions.com.au</Value>
+    </Setting>
+    <Setting Name="LocalFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ThinkingSolutionsSyllabus</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
