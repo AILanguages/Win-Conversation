@@ -10,7 +10,7 @@ using PatTuring2016.Speech.Forms;
 
 namespace PatTuring2016.Speech.LanguageCheckers
 {
-    public class KoreanLanguage : AbstractLanguage
+    public class KoreanLanguage : AbstractLanguage, ISpeechIsCommand
     {
         internal override void AddCommands(Choices commands)
         {
@@ -45,7 +45,7 @@ namespace PatTuring2016.Speech.LanguageCheckers
         }
 
         // return true if we should continue
-        internal override bool SpeechIsCommand(string text, Converser converser, ConversingController conversingController)
+        public bool SpeechIsCommand(string text, Converser converser, ConversingController conversingController)
         {
             // deal with commands if present
             switch (text)

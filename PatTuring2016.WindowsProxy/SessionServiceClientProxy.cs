@@ -6,7 +6,6 @@
 
 using PatTuring2016.Common.Contracts;
 using PatTuring2016.Common.DataContracts;
-using PatTuring2016.CommonProxy;
 
 namespace PatTuring2016.WindowsProxy
 {

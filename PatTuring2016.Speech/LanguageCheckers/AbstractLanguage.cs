@@ -17,7 +17,7 @@ namespace PatTuring2016.Speech.LanguageCheckers
         internal ContextForm ContextForm { get; set; }
 
         // take verbal command and change system settings
-        internal virtual bool SetTargetLanguage(string language, ConversingController conversingController)
+        internal bool SetTargetLanguage(string language, ConversingController conversingController)
         {
             switch (language)
             {
@@ -63,10 +63,7 @@ namespace PatTuring2016.Speech.LanguageCheckers
 
         internal abstract void SetFormal(ConversingController conversingController);
 
-        // return true if we should continue
-        internal abstract bool SpeechIsCommand(string text, Converser converser, ConversingController conversingController);
-
-        internal virtual bool MakeCommandChange(string text, Converser converser, ConversingController conversingController)
+        internal bool MakeCommandChange(string text, Converser converser, ConversingController conversingController)
         {
             // deal with commands if present
             switch (text)

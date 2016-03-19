@@ -4,10 +4,10 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-using System;
 using PatTuring2016.Common.ScreenModels;
+using System;
 
-namespace PatTuring2016.CommonProxy
+namespace PatTuring2016.WindowsProxy
 {
     public class MatchPatternPresentation
     {

@@ -1,16 +1,16 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="SettingsPresentation.cs" company="Pat Inc.">
+// <copyright file="SampleSettingsPresentation.cs" company="Pat Inc.">
 //     Copyright (c) Pat Inc. 2016. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
 
 using PatTuring2016.Common.ScreenModels;
 
-namespace PatTuring2016.CommonProxy
+namespace PatTuring2016.WindowsProxy
 {
-    public class SettingsPresentation
+    public class SampleSettingsPresentation
     {
-        public MatchSettings Settings { get; set; }
+        public SampleSettings Settings { get; set; }
         public bool SettingsChanged { get; set; }
     }
 }

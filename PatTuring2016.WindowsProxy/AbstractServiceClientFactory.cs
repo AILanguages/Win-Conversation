@@ -7,7 +7,7 @@
 using System;
 using System.ServiceModel;
 
-namespace PatTuring2016.CommonProxy
+namespace PatTuring2016.WindowsProxy
 {
     public class AbstractServiceClientFactory<TChannel> : ClientBase<TChannel> where TChannel : class
     {

@@ -4,7 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-using PatTuring2016.CommonProxy;
+using PatTuring2016.Common.DataContracts;
 using PatTuring2016.WindowsProxy.Facades;
 
 namespace PatTuring2016.WindowsProxy
@@ -15,10 +15,18 @@ namespace PatTuring2016.WindowsProxy
 
         public GetFacades(string service)
         {
-            _service = service; // add :8080     as needed, such as for localhost or when hosting service specifies that port. Azure coded to port 80.
+            _service = service; // add :8080 as needed, such as for localhost or when hosting service specifies that port. Azure coded to port 80.
 
             // the creation of this sets the userkey for server-side tracking of this client
-            BaseServiceFacade.SetUpFacade(new SessionServiceClientProxy().Create($"http://{service}/SessionService.svc"));
+            // ensure valid link to server in place - create a new user key!
+            var request = new GetIDRequest { UserKey = WindowsContext.UserKey };
+
+            var sessionService = new SessionServiceClientProxy().Create($"http://{service}/SessionService.svc");
+            var response = sessionService.GetID(request);
+
+            if (!response.Success) return;
+
+            WindowsContext.UserKey = response.UserKey;
         }
 
         public TranslateServiceFacade GetTranslateServiceFacade()

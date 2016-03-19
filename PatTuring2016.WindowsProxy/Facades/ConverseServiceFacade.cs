@@ -8,20 +8,23 @@ using PatTuring2016.Common.Contracts;
 using PatTuring2016.Common.DataContracts;
 using PatTuring2016.Common.ScreenModels;
 using PatTuring2016.Common.ScreenModels.Conversation;
-using PatTuring2016.CommonProxy;
 
 namespace PatTuring2016.WindowsProxy.Facades
 {
-    public class ConverseServiceFacade : BaseConverseServiceFacade
+    public class ConverseServiceFacade
     {
-        public ConverseServiceFacade(IConverseService converseService) : base(converseService)
-        { }
+        private readonly IConverseService _converseService;
 
+        public ConverseServiceFacade(IConverseService converseService)
+        { 
+            _converseService = converseService;
+        }
+        
         public ConversationData UpdateConversation(Match match)
         {
             var request = new NewMatchRequest { UserKey = WindowsContext.UserKey, DataToMatch = match };
 
-            var response = ConverseService.GetConversationData(request);
+            var response = _converseService.GetConversationData(request);
 
             return response.Conversation;
         }
@@ -30,7 +33,7 @@ namespace PatTuring2016.WindowsProxy.Facades
         {
             var request = new NewMatchRequest { UserKey = WindowsContext.UserKey, DataToMatch = match };
 
-            var response = ConverseService.GetContext(request);
+            var response = _converseService.GetContext(request);
 
             return response.Conversation;
         }
@@ -39,7 +42,7 @@ namespace PatTuring2016.WindowsProxy.Facades
         {
             var request = new NewMatchRequest { UserKey = WindowsContext.UserKey, DataToMatch = match };
 
-            ConverseService.RestartConversation(request);
+            _converseService.RestartConversation(request);
         }
     }
 }

@@ -6,7 +6,7 @@
 
 using PatTuring2016.Common.ScreenModels.FullScreenModels;
 
-namespace PatTuring2016.CommonProxy
+namespace PatTuring2016.WindowsProxy
 {
     public class ScreenPresentation
     {

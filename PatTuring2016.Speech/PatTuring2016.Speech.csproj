@@ -80,6 +80,7 @@
     <Compile Include="Forms\Converser.Designer.cs">
       <DependentUpon>Converser.cs</DependentUpon>
     </Compile>
+    <Compile Include="LanguageCheckers\ISpeechIsCommand.cs" />
     <Compile Include="SettingsController.cs" />
     <Compile Include="ConversingController.cs" />
     <Compile Include="Forms\ContextScreen.cs">
@@ -189,10 +190,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\PatTuring2016.CommonProxy\PatTuring2016.CommonProxy.csproj">
-      <Project>{433110c0-ec65-433c-b784-18a9a67686b0}</Project>
-      <Name>PatTuring2016.CommonProxy</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PatTuring2016.Common\PatTuring2016.Common.csproj">
       <Project>{f7cb7be6-7eec-4dda-a715-944151988474}</Project>
       <Name>PatTuring2016.Common</Name>
