@@ -4,6 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using System.Threading.Tasks;
 using PatTuring2016.Common;
 using PatTuring2016.Speech.Forms;
 using PatTuring2016.Speech.SpeechRec;
@@ -13,7 +14,6 @@ namespace PatTuring2016.Speech
 {
     public class ConversingController
     {
-        private readonly TranslateAndSpeak _translateAndSpeak;
         private readonly TuringConverse _turingConverser;
         private readonly SetVoiceMonitoring _setVoiceMonitoring;
         private readonly SyllabusTracker _syllabusTracker;
@@ -23,13 +23,12 @@ namespace PatTuring2016.Speech
 
         public ConversingController(SetVoiceMonitoring setVoiceMonitoring,
             SyllabusTracker syllabusTracker, SpeakText speakText, TuringConverse turingConverser,
-            TranslateAndSpeak translateAndSpeak, SettingsController settingsController)
+            SettingsController settingsController)
         {
             _setVoiceMonitoring = setVoiceMonitoring;
             _syllabusTracker = syllabusTracker;
             _speakText = speakText;
             _turingConverser = turingConverser;
-            _translateAndSpeak = translateAndSpeak;
             _settingsController = settingsController;
         }
 
@@ -43,9 +42,6 @@ namespace PatTuring2016.Speech
 
             var contextForm = _settingsController.GetContextForm();
             _speakText.LoadContextForm(contextForm);
-
-            // not used at present, but retain during refactor
-            _translateAndSpeak.Setup(_speakText, converser, contextForm);
         }
 
         internal Converser GetConverser()
@@ -75,7 +71,7 @@ namespace PatTuring2016.Speech
             _setVoiceMonitoring.LoadCurrentSyllabus(_syllabusTracker, _speakText.GetLanguage()); // load full syllabus/commands
         }
 
-        internal void HandleSpeech(string textIn)
+        internal async Task HandleSpeech(string textIn)
         {
             if (_speakText.SpeechIsCommand(textIn, _converser, this))
             {
@@ -85,9 +81,11 @@ namespace PatTuring2016.Speech
 
             _speakText.LogTextReceived(textIn, _converser);
 
-            var text =
+            var converseResponse = await _turingConverser.Converse(textIn);
+
+                var text =
                _converser.cbxAccentOnly.Checked ?
-               textIn : _turingConverser.Update(textIn, _converser.GetSingleLanguage(), "Polite");
+               textIn : converseResponse; //, _converser.GetSingleLanguage(), "Polite");
 
             _speakText.SpeakTextReceived(text, _converser);
         }
@@ -110,17 +108,15 @@ namespace PatTuring2016.Speech
             {
                 SpeakSyllabus(baseSyllabus);
             }
-
-
         }
 
-        private void SpeakSyllabus(BaseSyllabus syllabus)
+        private async void SpeakSyllabus(BaseSyllabus syllabus)
         {
             if (syllabus == null) return;
 
             foreach (var phrase in syllabus.Commands)
             {
-                HandleSpeech(phrase);
+                await HandleSpeech(phrase);
             }
         }
 
@@ -150,21 +146,19 @@ namespace PatTuring2016.Speech
             _setVoiceMonitoring.StopRecognize();
         }
 
-        internal void RestartConversation()
+        internal async void RestartConversation()
         {
-            _turingConverser.Restart();
+            await _turingConverser.Restart();
         }
 
         internal void ShowTrackedConversation()
         {
-            var trackScreen = _turingConverser.GetTrackScreen();
-            trackScreen.Show();
+            _turingConverser.GetTrackScreen();
         }
 
         internal void ShowContext()
         {
-            var contextScreen = _turingConverser.GetContextScreen();
-            contextScreen.Show();
+            _turingConverser.GetContextScreen();
         }
     }
 }

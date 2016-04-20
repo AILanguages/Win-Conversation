@@ -4,8 +4,6 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-using AilTuring2016.ScreenModels;
-
 namespace PatTuring2016.Common.ScreenModels
 {
     public class MatchSettings

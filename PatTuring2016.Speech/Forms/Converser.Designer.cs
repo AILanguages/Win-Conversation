@@ -62,9 +62,10 @@
             this.lblLeftQuote.AutoSize = true;
             this.lblLeftQuote.Font = new System.Drawing.Font("Adobe Garamond Pro", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLeftQuote.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblLeftQuote.Location = new System.Drawing.Point(12, 5);
+            this.lblLeftQuote.Location = new System.Drawing.Point(15, 6);
+            this.lblLeftQuote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLeftQuote.Name = "lblLeftQuote";
-            this.lblLeftQuote.Size = new System.Drawing.Size(97, 127);
+            this.lblLeftQuote.Size = new System.Drawing.Size(113, 149);
             this.lblLeftQuote.TabIndex = 30;
             this.lblLeftQuote.Text = "\"";
             // 
@@ -73,10 +74,10 @@
             this.btnRestart.BackColor = System.Drawing.Color.Crimson;
             this.btnRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRestart.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnRestart.Location = new System.Drawing.Point(1154, 1046);
+            this.btnRestart.Location = new System.Drawing.Point(1410, 1255);
             this.btnRestart.Margin = new System.Windows.Forms.Padding(2);
             this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(215, 69);
+            this.btnRestart.Size = new System.Drawing.Size(263, 83);
             this.btnRestart.TabIndex = 33;
             this.btnRestart.Text = "restart";
             this.btnRestart.UseVisualStyleBackColor = false;
@@ -87,10 +88,10 @@
             this.btnTracker.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnTracker.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTracker.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnTracker.Location = new System.Drawing.Point(1154, 1141);
+            this.btnTracker.Location = new System.Drawing.Point(1410, 1369);
             this.btnTracker.Margin = new System.Windows.Forms.Padding(2);
             this.btnTracker.Name = "btnTracker";
-            this.btnTracker.Size = new System.Drawing.Size(215, 69);
+            this.btnTracker.Size = new System.Drawing.Size(263, 83);
             this.btnTracker.TabIndex = 34;
             this.btnTracker.Text = "track";
             this.btnTracker.UseVisualStyleBackColor = false;
@@ -101,10 +102,10 @@
             this.btnContext.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnContext.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContext.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnContext.Location = new System.Drawing.Point(1154, 1236);
+            this.btnContext.Location = new System.Drawing.Point(1410, 1483);
             this.btnContext.Margin = new System.Windows.Forms.Padding(2);
             this.btnContext.Name = "btnContext";
-            this.btnContext.Size = new System.Drawing.Size(215, 69);
+            this.btnContext.Size = new System.Drawing.Size(263, 83);
             this.btnContext.TabIndex = 35;
             this.btnContext.Text = "context";
             this.btnContext.UseVisualStyleBackColor = false;
@@ -116,10 +117,11 @@
             this.tbxOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxOutput.Font = new System.Drawing.Font("Adobe Garamond Pro Bold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxOutput.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbxOutput.Location = new System.Drawing.Point(84, 12);
+            this.tbxOutput.Location = new System.Drawing.Point(103, 14);
+            this.tbxOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxOutput.Multiline = true;
             this.tbxOutput.Name = "tbxOutput";
-            this.tbxOutput.Size = new System.Drawing.Size(1235, 322);
+            this.tbxOutput.Size = new System.Drawing.Size(1060, 386);
             this.tbxOutput.TabIndex = 36;
             this.tbxOutput.Text = "\"";
             // 
@@ -129,10 +131,11 @@
             this.tbxGeneration.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxGeneration.Font = new System.Drawing.Font("Adobe Garamond Pro Bold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxGeneration.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbxGeneration.Location = new System.Drawing.Point(84, 332);
+            this.tbxGeneration.Location = new System.Drawing.Point(103, 398);
+            this.tbxGeneration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxGeneration.Multiline = true;
             this.tbxGeneration.Name = "tbxGeneration";
-            this.tbxGeneration.Size = new System.Drawing.Size(1235, 322);
+            this.tbxGeneration.Size = new System.Drawing.Size(1060, 386);
             this.tbxGeneration.TabIndex = 37;
             this.tbxGeneration.Text = "\"";
             // 
@@ -141,9 +144,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Adobe Garamond Pro", 10F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(12, 65);
+            this.label1.Location = new System.Drawing.Point(15, 78);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 25);
+            this.label1.Size = new System.Drawing.Size(76, 31);
             this.label1.TabIndex = 38;
             this.label1.Text = "heard:";
             // 
@@ -152,9 +156,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Adobe Garamond Pro", 10F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(12, 355);
+            this.label2.Location = new System.Drawing.Point(15, 426);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 25);
+            this.label2.Size = new System.Drawing.Size(59, 31);
             this.label2.TabIndex = 39;
             this.label2.Text = "said:";
             // 
@@ -163,10 +168,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(16, 836);
+            this.label5.Location = new System.Drawing.Point(20, 1003);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 32);
+            this.label5.Size = new System.Drawing.Size(99, 38);
             this.label5.TabIndex = 61;
             this.label5.Text = "Voice";
             // 
@@ -175,10 +180,10 @@
             this.btnMore.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btnMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.btnMore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnMore.Location = new System.Drawing.Point(1154, 951);
+            this.btnMore.Location = new System.Drawing.Point(1410, 1141);
             this.btnMore.Margin = new System.Windows.Forms.Padding(2);
             this.btnMore.Name = "btnMore";
-            this.btnMore.Size = new System.Drawing.Size(215, 69);
+            this.btnMore.Size = new System.Drawing.Size(263, 83);
             this.btnMore.TabIndex = 60;
             this.btnMore.Text = "more settings";
             this.btnMore.UseVisualStyleBackColor = false;
@@ -189,10 +194,10 @@
             this.btnGoOnline.BackColor = System.Drawing.Color.Black;
             this.btnGoOnline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnGoOnline.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGoOnline.Location = new System.Drawing.Point(1154, 856);
+            this.btnGoOnline.Location = new System.Drawing.Point(1410, 1027);
             this.btnGoOnline.Margin = new System.Windows.Forms.Padding(2);
             this.btnGoOnline.Name = "btnGoOnline";
-            this.btnGoOnline.Size = new System.Drawing.Size(215, 69);
+            this.btnGoOnline.Size = new System.Drawing.Size(263, 83);
             this.btnGoOnline.TabIndex = 59;
             this.btnGoOnline.Text = "change server";
             this.btnGoOnline.UseVisualStyleBackColor = false;
@@ -202,9 +207,10 @@
             // 
             this.ckLstTargets.CheckOnClick = true;
             this.ckLstTargets.FormattingEnabled = true;
-            this.ckLstTargets.Location = new System.Drawing.Point(648, 1022);
+            this.ckLstTargets.Location = new System.Drawing.Point(792, 1226);
+            this.ckLstTargets.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ckLstTargets.Name = "ckLstTargets";
-            this.ckLstTargets.Size = new System.Drawing.Size(439, 214);
+            this.ckLstTargets.Size = new System.Drawing.Size(536, 244);
             this.ckLstTargets.Sorted = true;
             this.ckLstTargets.TabIndex = 58;
             this.ckLstTargets.SelectedIndexChanged += new System.EventHandler(this.ckLstTargets_SelectedIndexChanged);
@@ -214,10 +220,10 @@
             this.btnTextIn.BackColor = System.Drawing.Color.SeaGreen;
             this.btnTextIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTextIn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnTextIn.Location = new System.Drawing.Point(647, 761);
+            this.btnTextIn.Location = new System.Drawing.Point(791, 913);
             this.btnTextIn.Margin = new System.Windows.Forms.Padding(2);
             this.btnTextIn.Name = "btnTextIn";
-            this.btnTextIn.Size = new System.Drawing.Size(215, 69);
+            this.btnTextIn.Size = new System.Drawing.Size(263, 83);
             this.btnTextIn.TabIndex = 57;
             this.btnTextIn.Text = "enter";
             this.btnTextIn.UseVisualStyleBackColor = false;
@@ -226,9 +232,10 @@
             // tbxEntry
             // 
             this.tbxEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxEntry.Location = new System.Drawing.Point(17, 774);
+            this.tbxEntry.Location = new System.Drawing.Point(21, 929);
+            this.tbxEntry.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxEntry.Name = "tbxEntry";
-            this.tbxEntry.Size = new System.Drawing.Size(610, 39);
+            this.tbxEntry.Size = new System.Drawing.Size(745, 44);
             this.tbxEntry.TabIndex = 56;
             // 
             // btnQuiet
@@ -236,10 +243,10 @@
             this.btnQuiet.BackColor = System.Drawing.Color.Pink;
             this.btnQuiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.btnQuiet.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnQuiet.Location = new System.Drawing.Point(236, 961);
+            this.btnQuiet.Location = new System.Drawing.Point(288, 1153);
             this.btnQuiet.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuiet.Name = "btnQuiet";
-            this.btnQuiet.Size = new System.Drawing.Size(215, 69);
+            this.btnQuiet.Size = new System.Drawing.Size(263, 83);
             this.btnQuiet.TabIndex = 55;
             this.btnQuiet.Text = "be silent";
             this.btnQuiet.UseVisualStyleBackColor = false;
@@ -249,30 +256,30 @@
             // 
             this.lblErrorSound.AutoSize = true;
             this.lblErrorSound.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblErrorSound.Location = new System.Drawing.Point(27, 1240);
+            this.lblErrorSound.Location = new System.Drawing.Point(33, 1488);
             this.lblErrorSound.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblErrorSound.Name = "lblErrorSound";
-            this.lblErrorSound.Size = new System.Drawing.Size(0, 20);
+            this.lblErrorSound.Size = new System.Drawing.Size(0, 25);
             this.lblErrorSound.TabIndex = 54;
             // 
             // lblPercent
             // 
             this.lblPercent.AutoSize = true;
             this.lblPercent.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPercent.Location = new System.Drawing.Point(27, 1049);
+            this.lblPercent.Location = new System.Drawing.Point(33, 1259);
             this.lblPercent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPercent.Name = "lblPercent";
-            this.lblPercent.Size = new System.Drawing.Size(0, 20);
+            this.lblPercent.Size = new System.Drawing.Size(0, 25);
             this.lblPercent.TabIndex = 53;
             // 
             // lblError
             // 
             this.lblError.AutoSize = true;
             this.lblError.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblError.Location = new System.Drawing.Point(27, 1078);
+            this.lblError.Location = new System.Drawing.Point(33, 1294);
             this.lblError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 20);
+            this.lblError.Size = new System.Drawing.Size(0, 25);
             this.lblError.TabIndex = 52;
             // 
             // btnClear
@@ -280,10 +287,10 @@
             this.btnClear.BackColor = System.Drawing.Color.CadetBlue;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClear.Location = new System.Drawing.Point(1154, 761);
+            this.btnClear.Location = new System.Drawing.Point(1410, 913);
             this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(215, 69);
+            this.btnClear.Size = new System.Drawing.Size(263, 83);
             this.btnClear.TabIndex = 51;
             this.btnClear.Text = "clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -294,10 +301,10 @@
             this.btnClose.BackColor = System.Drawing.Color.Tomato;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClose.Location = new System.Drawing.Point(14, 1134);
+            this.btnClose.Location = new System.Drawing.Point(17, 1361);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(215, 69);
+            this.btnClose.Size = new System.Drawing.Size(263, 83);
             this.btnClose.TabIndex = 49;
             this.btnClose.Text = "close app";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -306,10 +313,10 @@
             // cbxSource
             // 
             this.cbxSource.FormattingEnabled = true;
-            this.cbxSource.Location = new System.Drawing.Point(647, 906);
+            this.cbxSource.Location = new System.Drawing.Point(791, 1087);
             this.cbxSource.Margin = new System.Windows.Forms.Padding(2);
             this.cbxSource.Name = "cbxSource";
-            this.cbxSource.Size = new System.Drawing.Size(440, 28);
+            this.cbxSource.Size = new System.Drawing.Size(537, 32);
             this.cbxSource.TabIndex = 48;
             // 
             // label4
@@ -317,10 +324,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(641, 836);
+            this.label4.Location = new System.Drawing.Point(783, 1003);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(349, 32);
+            this.label4.Size = new System.Drawing.Size(402, 38);
             this.label4.TabIndex = 47;
             this.label4.Text = "Source Language / Accent";
             // 
@@ -329,10 +336,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(641, 953);
+            this.label3.Location = new System.Drawing.Point(783, 1144);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(232, 32);
+            this.label3.Size = new System.Drawing.Size(264, 38);
             this.label3.TabIndex = 45;
             this.label3.Text = "Target Language";
             // 
@@ -342,10 +349,10 @@
             this.btnStop.Enabled = false;
             this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.btnStop.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnStop.Location = new System.Drawing.Point(17, 961);
+            this.btnStop.Location = new System.Drawing.Point(21, 1153);
             this.btnStop.Margin = new System.Windows.Forms.Padding(2);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(215, 69);
+            this.btnStop.Size = new System.Drawing.Size(263, 83);
             this.btnStop.TabIndex = 44;
             this.btnStop.Text = "don\'t listen";
             this.btnStop.UseVisualStyleBackColor = false;
@@ -356,10 +363,10 @@
             this.btnStart.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.btnStart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnStart.Location = new System.Drawing.Point(17, 874);
+            this.btnStart.Location = new System.Drawing.Point(21, 1049);
             this.btnStart.Margin = new System.Windows.Forms.Padding(2);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(215, 69);
+            this.btnStart.Size = new System.Drawing.Size(263, 83);
             this.btnStart.TabIndex = 43;
             this.btnStart.Text = "listen now";
             this.btnStart.UseVisualStyleBackColor = false;
@@ -369,9 +376,10 @@
             // 
             this.cbxTargetOnly.AutoSize = true;
             this.cbxTargetOnly.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cbxTargetOnly.Location = new System.Drawing.Point(647, 874);
+            this.cbxTargetOnly.Location = new System.Drawing.Point(791, 1049);
+            this.cbxTargetOnly.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxTargetOnly.Name = "cbxTargetOnly";
-            this.cbxTargetOnly.Size = new System.Drawing.Size(166, 24);
+            this.cbxTargetOnly.Size = new System.Drawing.Size(203, 29);
             this.cbxTargetOnly.TabIndex = 62;
             this.cbxTargetOnly.Text = "Speak Target Only";
             this.cbxTargetOnly.UseVisualStyleBackColor = true;
@@ -380,19 +388,22 @@
             // 
             this.cbxAccentOnly.AutoSize = true;
             this.cbxAccentOnly.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cbxAccentOnly.Location = new System.Drawing.Point(648, 989);
+            this.cbxAccentOnly.Location = new System.Drawing.Point(792, 1187);
+            this.cbxAccentOnly.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxAccentOnly.Name = "cbxAccentOnly";
-            this.cbxAccentOnly.Size = new System.Drawing.Size(120, 24);
+            this.cbxAccentOnly.Size = new System.Drawing.Size(145, 29);
             this.cbxAccentOnly.TabIndex = 63;
             this.cbxAccentOnly.Text = "Accent Only";
             this.cbxAccentOnly.UseVisualStyleBackColor = true;
             // 
             // Converser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1402, 1319);
+            this.ClientSize = new System.Drawing.Size(1176, 536);
             this.Controls.Add(this.cbxAccentOnly);
             this.Controls.Add(this.cbxTargetOnly);
             this.Controls.Add(this.tbxGeneration);
@@ -423,6 +434,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Converser";
             this.Opacity = 0.88D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Thinking Solutions Conversation Using Speech";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

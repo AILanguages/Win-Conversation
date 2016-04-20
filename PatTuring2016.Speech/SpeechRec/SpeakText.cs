@@ -6,10 +6,10 @@
 
 using PatTuring2016.Speech.Forms;
 using PatTuring2016.Speech.LanguageCheckers;
+using PatTuring2016.Speech.VoiceSyllabus;
 using System;
 using System.Speech.Synthesis;
 using System.Windows.Forms;
-using PatTuring2016.Speech.VoiceSyllabus;
 
 namespace PatTuring2016.Speech.SpeechRec
 {

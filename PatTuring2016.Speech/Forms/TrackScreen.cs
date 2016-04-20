@@ -1,6 +1,6 @@
-﻿using System;
+﻿using PatTuring2016.Common.ScreenModels.Conversation;
+using System;
 using System.Windows.Forms;
-using PatTuring2016.Common.ScreenModels;
 
 namespace PatTuring2016.Speech.Forms
 {
@@ -15,11 +15,12 @@ namespace PatTuring2016.Speech.Forms
         {
             Close();
         }
-
-
-        internal void LoadData(ConverseViewModel tracker)
+        
+        internal void LoadData(ConversationData data)
         {
-            foreach (var spoken in tracker.Conversation.TrackingData.SpokenList)
+            if (data == null) return;
+
+            foreach (var spoken in data.TrackingData.SpokenList)
             {
                 dataGridView1.Rows.Add(spoken.Speaker, spoken.WhatSaid, spoken.WhenSaid);
             }

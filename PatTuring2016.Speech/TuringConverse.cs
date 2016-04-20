@@ -5,85 +5,111 @@
 //-----------------------------------------------------------------------
 
 using PatTuring2016.Common.ScreenModels;
+using PatTuring2016.Common.ScreenModels.Conversation;
 using PatTuring2016.Speech.Forms;
 using PatTuring2016.Speech.Properties;
-using PatTuring2016.WindowsProxy;
-using PatTuring2016.WindowsProxy.Facades;
+using System;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace PatTuring2016.Speech
 {
     public class TuringConverse
     {
-        private readonly TranslateSettings _translateSettings;
-        private readonly SettingsServiceFacade _settingsServiceFacade;
-        private readonly ConverseServiceFacade _converseServiceFacade;
+        private readonly MatchSettings _matchSettings;
+        private readonly string _url;
+        private string _userKey;
 
-        public TuringConverse(TranslateSettings translateSettings)
+        public TuringConverse(MatchSettings matchSettings)
         {
-            _translateSettings = translateSettings;
-            var service = (string)Settings.Default["DataServer"]; // the validated address of the service
-            var facades = new GetFacades(service);
-            
-            _converseServiceFacade = facades.GetConverseSericeFacade();
-            _settingsServiceFacade = facades.GetSettingsServiceFacade();
+            _matchSettings = matchSettings;
+            _url = (string)Settings.Default["DataServer"]; // the validated address of the service
+            _userKey = string.Empty;
         }
 
-        internal void Setup(ContextForm contextForm)
+        internal async Task<string> Converse(string sourcetext)
         {
-            _translateSettings.Setup(contextForm);
-        }
+            var match = new ConverseMatch { DataToMatch = sourcetext, UserKey = _userKey, MatchSettings = _matchSettings };
 
-        public string Update(string sourcetext, string target, string formality)
-        {
-            var match = new Match();
-
-            if (!string.IsNullOrWhiteSpace(sourcetext))
+            using (var client = new HttpClient())
             {
-                match.TextIn = sourcetext;
+                SetupClient(client);
+
+                // HTTP POST
+                HttpResponseMessage response = await client.PostAsJsonAsync("api/v1/converse", match);
+                if (response.IsSuccessStatusCode)
+                {
+                    var matchupdate = await response.Content.ReadAsAsync<ConverseMatch>();
+                    _userKey = matchupdate.UserKey;
+                    return matchupdate.ConverseResponse.CurrentResponse != null ? matchupdate.ConverseResponse.CurrentResponse.WhatSaid : string.Empty;
+                }
             }
 
-            var cvm = new ConverseViewModel
-            {
-                Conversation = _converseServiceFacade.UpdateConversation(match),
-                Match = new Match()
-            };
-
-            return cvm.Conversation.CurrentResponse != null ? cvm.Conversation.CurrentResponse.WhatSaid : string.Empty;
+            return string.Empty;
         }
 
-        public void Restart()
+        public async Task Restart()
         {
-            var match = new Match();
+            var match = new ConverseMatch { UserKey = _userKey, MatchSettings = _matchSettings };
 
-            _converseServiceFacade.RestartConversation(match);
+            using (var client = new HttpClient())
+            {
+                SetupClient(client);
+
+                // HTTP POST
+                HttpResponseMessage response = await client.PostAsJsonAsync("api/v1/restart", match);
+                if (response.IsSuccessStatusCode)
+                {
+                    //var matchupdate = await response.Content.ReadAsAsync<ConversationData>();
+                }
+            }
         }
 
-        internal ContextScreen GetContextScreen()
+        private void SetupClient(HttpClient client)
+        {
+            client.BaseAddress = new Uri("http://" + _url + "/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        }
+
+        internal async void GetContextScreen()
         {
             var contextScreen = new ContextScreen();
-            contextScreen.LoadData(Context());
-            return contextScreen;
+            var track = await Tracker();
+            
+            contextScreen.LoadData(track);
+            contextScreen.Show();
         }
 
-        internal TrackScreen GetTrackScreen()
+        internal async void GetTrackScreen()
         {
             var trackscreen = new TrackScreen();
-            trackscreen.LoadData(Tracker());
-            return trackscreen;
+            var track = await Tracker();
+
+            trackscreen.LoadData(track);
+            trackscreen.Show();
         }
 
-        private ConverseViewModel Context()
+        private async Task<ConversationData> Tracker()
         {
-            var match = new Match { TextIn = "Context" };
+            var match = new ConverseMatch { DataToMatch = "Context", UserKey = _userKey, MatchSettings = _matchSettings };
 
-            return new ConverseViewModel { Conversation = _converseServiceFacade.GetContext(match), Match = new Match() };
-        }
+            using (var client = new HttpClient())
+            {
+                SetupClient(client);
 
-        private ConverseViewModel Tracker()
-        {
-            var match = new Match { TextIn = "Context" };
+                // HTTP POST
+                HttpResponseMessage response = await client.PostAsJsonAsync("api/v1/converse", match);
+                if (response.IsSuccessStatusCode)
+                {
+                    var matchupdate = await response.Content.ReadAsAsync<ConverseMatch>();
+                    _userKey = matchupdate.UserKey;
+                    return matchupdate.ConverseResponse;
+                }
+            }
 
-            return new ConverseViewModel { Conversation = _converseServiceFacade.GetContext(match), Match = new Match() };
+            return null;
         }
     }
 }

@@ -130,9 +130,9 @@ namespace PatTuring2016.Speech.Forms
             return string.Empty;
         }
 
-        private void btnTextIn_Click(object sender, EventArgs e)
+        private async void btnTextIn_Click(object sender, EventArgs e)
         {
-            GetConversingController().HandleSpeech(tbxEntry.Text);
+            await GetConversingController().HandleSpeech(tbxEntry.Text);
         }
 
         private void btnMore_Click(object sender, EventArgs e)

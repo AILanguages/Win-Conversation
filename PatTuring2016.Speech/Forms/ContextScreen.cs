@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Windows.Forms;
 using PatTuring2016.Common.ScreenModels;
+using PatTuring2016.Common.ScreenModels.Conversation;
 
 namespace PatTuring2016.Speech.Forms
 {
@@ -25,14 +26,14 @@ namespace PatTuring2016.Speech.Forms
             Close();
         }
 
-        internal void LoadData(ConverseViewModel context)
+        internal void LoadData(ConversationData context)
         {
-            foreach (var highContext in context.Conversation.HighTrackingData.HighContextList)
+            foreach (var highContext in context.HighTrackingData.HighContextList)
             {
                 dataGridView1.Rows.Add(highContext.Element, highContext.Value);
             }
 
-            foreach (var pronounContext in context.Conversation.PronounTrackingData.PronounList)
+            foreach (var pronounContext in context.PronounTrackingData.PronounList)
             {
                 dataGridView2.Rows.Add(GetList(pronounContext.ClausePart),
                     GetList(pronounContext.ClauseElements),

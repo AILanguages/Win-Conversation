@@ -3,7 +3,7 @@
 //     Copyright (c) AI Languages 2016. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace PatTuring2016.WindowsProxy
+namespace PatTuring2016.Speech
 {
     internal static class WindowsContext
     {

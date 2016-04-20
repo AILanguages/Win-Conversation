@@ -44,21 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractServiceClientFactory.cs" />
-    <Compile Include="ConverseServiceClientProxy.cs" />
-    <Compile Include="Facades\ConverseServiceFacade.cs" />
-    <Compile Include="Facades\SettingsServiceFacade.cs" />
-    <Compile Include="Facades\TranslateServiceFacade.cs" />
-    <Compile Include="GetFacades.cs" />
-    <Compile Include="MatchPatternPresentation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SampleSettingsPresentation.cs" />
-    <Compile Include="ScreenPresentation.cs" />
-    <Compile Include="SessionServiceClientProxy.cs" />
-    <Compile Include="SettingsPresentation.cs" />
-    <Compile Include="SettingsServiceClientProxy.cs" />
-    <Compile Include="TranslateServiceClientProxy.cs" />
-    <Compile Include="WindowsContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PatTuring2016.Common\PatTuring2016.Common.csproj">
