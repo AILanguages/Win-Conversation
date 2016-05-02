@@ -43,10 +43,10 @@
             this.btnReset.BackColor = System.Drawing.Color.Crimson;
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btnReset.Location = new System.Drawing.Point(411, 180);
+            this.btnReset.Location = new System.Drawing.Point(502, 216);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(215, 69);
+            this.btnReset.Size = new System.Drawing.Size(263, 83);
             this.btnReset.TabIndex = 40;
             this.btnReset.Text = "reset";
             this.btnReset.UseVisualStyleBackColor = false;
@@ -57,10 +57,10 @@
             this.btnLast.BackColor = System.Drawing.Color.Azure;
             this.btnLast.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLast.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnLast.Location = new System.Drawing.Point(17, 180);
+            this.btnLast.Location = new System.Drawing.Point(21, 216);
             this.btnLast.Margin = new System.Windows.Forms.Padding(2);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(215, 69);
+            this.btnLast.Size = new System.Drawing.Size(263, 83);
             this.btnLast.TabIndex = 39;
             this.btnLast.Text = "say last";
             this.btnLast.UseVisualStyleBackColor = false;
@@ -69,9 +69,10 @@
             // tbxSyllabus
             // 
             this.tbxSyllabus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxSyllabus.Location = new System.Drawing.Point(16, 47);
+            this.tbxSyllabus.Location = new System.Drawing.Point(20, 56);
+            this.tbxSyllabus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxSyllabus.Name = "tbxSyllabus";
-            this.tbxSyllabus.Size = new System.Drawing.Size(610, 39);
+            this.tbxSyllabus.Size = new System.Drawing.Size(745, 44);
             this.tbxSyllabus.TabIndex = 38;
             // 
             // btnLoad
@@ -79,10 +80,10 @@
             this.btnLoad.BackColor = System.Drawing.Color.DarkMagenta;
             this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLoad.Location = new System.Drawing.Point(16, 98);
+            this.btnLoad.Location = new System.Drawing.Point(20, 118);
             this.btnLoad.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(215, 69);
+            this.btnLoad.Size = new System.Drawing.Size(263, 83);
             this.btnLoad.TabIndex = 37;
             this.btnLoad.Text = "load";
             this.btnLoad.UseVisualStyleBackColor = false;
@@ -93,37 +94,35 @@
             this.btnDisplay.BackColor = System.Drawing.Color.Navy;
             this.btnDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDisplay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDisplay.Location = new System.Drawing.Point(17, 262);
+            this.btnDisplay.Location = new System.Drawing.Point(21, 314);
             this.btnDisplay.Margin = new System.Windows.Forms.Padding(2);
             this.btnDisplay.Name = "btnDisplay";
-            this.btnDisplay.Size = new System.Drawing.Size(215, 69);
+            this.btnDisplay.Size = new System.Drawing.Size(263, 83);
             this.btnDisplay.TabIndex = 36;
             this.btnDisplay.Text = "see last";
             this.btnDisplay.UseVisualStyleBackColor = false;
-            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
             // btnSyllabus
             // 
             this.btnSyllabus.BackColor = System.Drawing.Color.PowderBlue;
             this.btnSyllabus.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSyllabus.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnSyllabus.Location = new System.Drawing.Point(411, 98);
+            this.btnSyllabus.Location = new System.Drawing.Point(502, 118);
             this.btnSyllabus.Margin = new System.Windows.Forms.Padding(2);
             this.btnSyllabus.Name = "btnSyllabus";
-            this.btnSyllabus.Size = new System.Drawing.Size(215, 69);
+            this.btnSyllabus.Size = new System.Drawing.Size(263, 83);
             this.btnSyllabus.TabIndex = 35;
             this.btnSyllabus.Text = "say all";
             this.btnSyllabus.UseVisualStyleBackColor = false;
-            this.btnSyllabus.Click += new System.EventHandler(this.btnSyllabus_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 9);
+            this.label6.Location = new System.Drawing.Point(13, 11);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(204, 32);
+            this.label6.Size = new System.Drawing.Size(230, 38);
             this.label6.TabIndex = 34;
             this.label6.Text = "Loaded Syllabi";
             // 
@@ -132,10 +131,10 @@
             this.btnHide.BackColor = System.Drawing.Color.Thistle;
             this.btnHide.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHide.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnHide.Location = new System.Drawing.Point(411, 298);
+            this.btnHide.Location = new System.Drawing.Point(502, 358);
             this.btnHide.Margin = new System.Windows.Forms.Padding(2);
             this.btnHide.Name = "btnHide";
-            this.btnHide.Size = new System.Drawing.Size(215, 69);
+            this.btnHide.Size = new System.Drawing.Size(263, 83);
             this.btnHide.TabIndex = 50;
             this.btnHide.Text = "hide";
             this.btnHide.UseVisualStyleBackColor = false;
@@ -143,10 +142,10 @@
             // 
             // SyllabusForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ClientSize = new System.Drawing.Size(638, 378);
+            this.ClientSize = new System.Drawing.Size(780, 454);
             this.Controls.Add(this.btnHide);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnLast);
@@ -155,6 +154,7 @@
             this.Controls.Add(this.btnDisplay);
             this.Controls.Add(this.btnSyllabus);
             this.Controls.Add(this.label6);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SyllabusForm";
             this.Text = "Syllabus Selection Form";
             this.ResumeLayout(false);

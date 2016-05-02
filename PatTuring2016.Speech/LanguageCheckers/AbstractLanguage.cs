@@ -68,13 +68,13 @@ namespace PatTuring2016.Speech.LanguageCheckers
             // deal with commands if present
             switch (text)
             {
-                case "target only":
-                    converser.cbxTargetOnly.Checked = true;
-                    return true;
+                //case "target only":
+                //    converser.cbxTargetOnly.Checked = true;
+                //    return true;
 
-                case "confirm source":
-                    converser.cbxTargetOnly.Checked = false;
-                    return true;
+                //case "confirm source":
+                //    converser.cbxTargetOnly.Checked = false;
+                //    return true;
 
                 case "formal":
                     SetFormal(conversingController);

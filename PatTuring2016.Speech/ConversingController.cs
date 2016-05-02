@@ -15,21 +15,23 @@ namespace PatTuring2016.Speech
     public class ConversingController
     {
         private readonly TuringConverse _turingConverser;
+        private readonly SyllabusForm _syllabusForm;
         private readonly SetVoiceMonitoring _setVoiceMonitoring;
         private readonly SyllabusTracker _syllabusTracker;
         readonly SpeakText _speakText;
         private Converser _converser;
-        private readonly SettingsController _settingsController;
+       // private readonly SettingsController _settingsController;
 
         public ConversingController(SetVoiceMonitoring setVoiceMonitoring,
             SyllabusTracker syllabusTracker, SpeakText speakText, TuringConverse turingConverser,
-            SettingsController settingsController)
+            SettingsController settingsController, SyllabusForm syllabusForm)
         {
             _setVoiceMonitoring = setVoiceMonitoring;
             _syllabusTracker = syllabusTracker;
             _speakText = speakText;
             _turingConverser = turingConverser;
-            _settingsController = settingsController;
+            _syllabusForm = syllabusForm;
+            //  _settingsController = settingsController;
         }
 
         internal void Setup(Converser converser)
@@ -38,10 +40,11 @@ namespace PatTuring2016.Speech
             _converser.tbxOutput.Text = string.Empty;
             _converser.tbxGeneration.Text = string.Empty;
 
-            _settingsController.Setup(converser, this, _syllabusTracker);
+            _syllabusForm.Setup(this, _syllabusTracker);
+            //_settingsController.Setup(converser, this, _syllabusTracker);
 
-            var contextForm = _settingsController.GetContextForm();
-            _speakText.LoadContextForm(contextForm);
+            //var contextForm = _settingsController.GetContextForm();
+           // _speakText.LoadContextForm(contextForm);
         }
 
         internal Converser GetConverser()
@@ -67,7 +70,7 @@ namespace PatTuring2016.Speech
 
         internal void LoadSyllabus()
         {
-            _setVoiceMonitoring.CreateEngine(this, _converser.cbxSource.Text); // setup current langauge recognition
+            _setVoiceMonitoring.CreateEngine(this, "USEnglish"); //" _converser.cbxSource.Text); // setup current langauge recognition
             _setVoiceMonitoring.LoadCurrentSyllabus(_syllabusTracker, _speakText.GetLanguage()); // load full syllabus/commands
         }
 
@@ -83,16 +86,16 @@ namespace PatTuring2016.Speech
 
             var converseResponse = await _turingConverser.Converse(textIn);
 
-                var text =
-               _converser.cbxAccentOnly.Checked ?
-               textIn : converseResponse; //, _converser.GetSingleLanguage(), "Polite");
+            //var text = converseResponse;
+            //   _converser.cbxAccentOnly.Checked ?
+            //   textIn : converseResponse; //, _converser.GetSingleLanguage(), "Polite");
 
-            _speakText.SpeakTextReceived(text, _converser);
+            _speakText.SpeakTextReceived(converseResponse, _converser);
         }
 
         internal void ChangeTargetTo(AllLanguageList newTarget)
         {
-            _converser.SetSingleLanguage(newTarget.ToString());
+//            _converser.SetSingleLanguage(newTarget.ToString());
         }
 
         // speak the last sylabus selected
@@ -122,13 +125,14 @@ namespace PatTuring2016.Speech
 
         internal void MoreContext()
         {
-            _settingsController.MoreContext();
+       //     _syllabusTracker.ShowForm();
+//            _settingsController.MoreContext();
         }
 
-        internal void CloseWindows()
-        {
-            _settingsController.CloseWindows();
-        }
+        //internal void CloseWindows()
+        //{
+        //    _settingsController.CloseWindows();
+        //}
 
         internal void SetQuiet()
         {
@@ -137,8 +141,8 @@ namespace PatTuring2016.Speech
 
         internal void SetVoiceMonitoring()
         {
-            LoadSyllabus();
-            _setVoiceMonitoring.Recognize();
+           // LoadSyllabus();
+           // _setVoiceMonitoring.Recognize();
         }
 
         internal void StopRecognize()
@@ -159,6 +163,11 @@ namespace PatTuring2016.Speech
         internal void ShowContext()
         {
             _turingConverser.GetContextScreen();
+        }
+
+        public void ShowSyllabus()
+        {
+            _syllabusForm.Show();
         }
     }
 }

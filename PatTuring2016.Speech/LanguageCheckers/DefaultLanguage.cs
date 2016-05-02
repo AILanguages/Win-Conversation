@@ -41,6 +41,26 @@ namespace PatTuring2016.Speech.LanguageCheckers
             commands.Add("What did my mother eat?");
             commands.Add("Why did John see the bear?");
             commands.Add("Who was seen by John?");
+
+            commands.Add("John ate the fish yesterday no the beef at the beach, and Beth, the pork.");
+            commands.Add("My friend's mother saw the apple in the parking lot.");
+            commands.Add("Then she went to the airport at 3pm.");
+            commands.Add("Where was the apple seen?");
+            commands.Add("Who saw the apple?");
+            commands.Add("Where was the apple?");
+
+            commands.Add("The witness arrived at the court.");
+            commands.Add("Then, the lawyer saw himself in the mirror.");
+
+            commands.Add("The lawyer arrived at the court.");
+            commands.Add("Then the dog bit his mother.");
+            commands.Add("Then, the witness saw himself in the mirror.");
+
+            commands.Add("He answered the questions before he left.");
+            commands.Add("Who answered?");
+
+            commands.Add("Call Beth no John.");
+            commands.Add("Who was called?");
         }
 
         internal override void SetIntimate(ConversingController conversingController)
@@ -67,12 +87,12 @@ namespace PatTuring2016.Speech.LanguageCheckers
             // deal with commands if present
             switch (text)
             {
-                case "target only":
-                    converser.cbxTargetOnly.Checked = true;
-                    return true;
-                case "confirm source":
-                    converser.cbxTargetOnly.Checked = false;
-                    return true;
+                //case "target only":
+                //    converser.cbxTargetOnly.Checked = true;
+                //    return true;
+                //case "confirm source":
+                //    converser.cbxTargetOnly.Checked = false;
+                //    return true;
 
                 case "formal":
                     SetFormal(conversingController);

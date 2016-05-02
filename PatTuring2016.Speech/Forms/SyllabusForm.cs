@@ -43,7 +43,7 @@ namespace PatTuring2016.Speech.Forms
                 tbxSyllabus.Text = GetFileNameOnly(currentSyllabus.Name) + ", " + tbxSyllabus.Text;
             }
 
-            _conversingController.LoadSyllabus();
+          //  _conversingController.LoadSyllabus();
         }
 
         private void btnLast_Click(object sender, EventArgs e)

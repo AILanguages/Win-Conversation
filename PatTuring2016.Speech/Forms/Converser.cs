@@ -4,11 +4,11 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using PatTuring2016.Common;
+using StructureMap;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using PatTuring2016.Common;
-using StructureMap;
 
 namespace PatTuring2016.Speech.Forms
 {
@@ -19,43 +19,54 @@ namespace PatTuring2016.Speech.Forms
         public Converser()
         {
             InitializeComponent();
+
             Setup();
         }
 
         private void Setup()
         {
             var languages = AllLanguages.LanguageObjectList();
-            ckLstTargets.Items.AddRange(languages);
+            //  ckLstTargets.Items.AddRange(languages);
 
-            SetSingleLanguage(AllLanguageList.USEnglish.ToString());
+            //SetSingleLanguage(AllLanguageList.USEnglish.ToString());
 
-            cbxSource.Items.AddRange(languages);
-            cbxSource.Text = AllLanguageList.OzEnglish.ToString(); // default source speaker
+            //  cbxSource.Items.AddRange(languages);
+            //  cbxSource.Text = AllLanguageList.OzEnglish.ToString(); // default source speaker
 
             // get screen postion and size
-            Location = new Point(0, 0);
-            Size = Screen.PrimaryScreen.WorkingArea.Size;
-            Width = 1500;
-            Height = 1800;
-        }
+            //Location = new Point(0, 0);
+            //Size = Screen.PrimaryScreen.WorkingArea.Size;
+            //Width = 1500;
+            //Height = 1800;
 
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            btnStart.Enabled = false;
-            btnStop.Enabled = true;
+          //  tbxGeneration.Parent = pictureBox1;
+            tbxEntry.Parent = pictureBox1;
+           // tbxOutput.Parent = pictureBox1;
+            btnRestart.Parent = pictureBox1;
+
+            tbxEntry.Multiline = true;
+            tbxEntry.BorderStyle = BorderStyle.None;
+
             GetConversingController().SetVoiceMonitoring();
         }
 
-        private void btnStop_Click(object sender, EventArgs e)
-        {
-            btnStart.Enabled = true;
-            btnStop.Enabled = false;
-            GetConversingController().StopRecognize();
+        //private void btnStart_Click(object sender, EventArgs e)
+        //{
+        //  //  btnStart.Enabled = false;
+        //  //  btnStop.Enabled = true;
+        //    GetConversingController().SetVoiceMonitoring();
+        //}
 
-            lblError.Text = string.Empty;
-            lblErrorSound.Text = string.Empty;
-            lblPercent.Text = string.Empty;
-        }
+        //private void btnStop_Click(object sender, EventArgs e)
+        //{
+        //    btnStart.Enabled = true;
+        // //   btnStop.Enabled = false;
+        //    GetConversingController().StopRecognize();
+
+        //    lblError.Text = string.Empty;
+        //    lblErrorSound.Text = string.Empty;
+        //    lblPercent.Text = string.Empty;
+        //}
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -73,13 +84,13 @@ namespace PatTuring2016.Speech.Forms
             Close();
         }
 
-        internal void SetSingleLanguage(string single)
-        {
-            for (var i = 0; i < ckLstTargets.Items.Count; i++)
-            {
-                ckLstTargets.SetItemChecked(i, ckLstTargets.Items[i].ToString() == single);
-            }
-        }
+        //internal void SetSingleLanguage(string single)
+        //{
+        //    for (var i = 0; i < ckLstTargets.Items.Count; i++)
+        //    {
+        //        ckLstTargets.SetItemChecked(i, ckLstTargets.Items[i].ToString() == single);
+        //    }
+        //}
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -89,7 +100,7 @@ namespace PatTuring2016.Speech.Forms
 
         private void btnQuiet_Click(object sender, EventArgs e)
         {
-            GetConversingController().SetQuiet();
+            GetConversingController().ShowSyllabus();
         }
 
         private void btnTracker_Click(object sender, EventArgs e)
@@ -120,41 +131,40 @@ namespace PatTuring2016.Speech.Forms
             return _conversingController;
         }
 
-        internal string GetSingleLanguage()
-        {
-            foreach (var language in ckLstTargets.CheckedItems)
-            {
-                return language.ToString();
-            }
+        //internal string GetSingleLanguage()
+        //{
+        //    //foreach (var language in ckLstTargets.CheckedItems)
+        //    //{
+        //    //    return language.ToString();
+        //    //}
 
-            return string.Empty;
-        }
+        //    return string.Empty;
+        //}
 
         private async void btnTextIn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(tbxEntry.Text)) return;
+
             await GetConversingController().HandleSpeech(tbxEntry.Text);
         }
 
-        private void btnMore_Click(object sender, EventArgs e)
+        private void tbxOutput_TextChanged(object sender, EventArgs e)
         {
-            GetConversingController().MoreContext();
+
         }
 
-        private void btnGoOnline_Click(object sender, EventArgs e)
-        {
-            var converserController = GetConversingController();
-            converserController.CloseWindows();
-            _conversingController = null;
-            Form1_Load(this, new EventArgs());
-            GetConversingController(); // reset speech controller and links 
-        }
+        //private void btnMore_Click(object sender, EventArgs e)
+        //{
+        //    GetConversingController().MoreContext();
+        //}
 
-        private void ckLstTargets_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var listbox = sender as CheckedListBox;
-            if (listbox == null) return;
-
-            SetSingleLanguage(listbox.SelectedItem.ToString());
-        }
+        ////private void btnGoOnline_Click(object sender, EventArgs e)
+        ////{
+        ////    var converserController = GetConversingController();
+        ////    converserController.CloseWindows();
+        ////    _conversingController = null;
+        ////    Form1_Load(this, new EventArgs());
+        ////    GetConversingController(); // reset speech controller and links 
+        ////}
     }
 }

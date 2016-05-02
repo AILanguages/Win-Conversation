@@ -83,11 +83,26 @@
     <Compile Include="Forms\ContextForm.Designer.cs">
       <DependentUpon>ContextForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ConverserOld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConverserOld.Designer.cs">
+      <DependentUpon>ConverserOld.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Converser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Converser.Designer.cs">
       <DependentUpon>Converser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomTextBox.Designer.cs">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TransparentControl.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="LanguageCheckers\ISpeechIsCommand.cs" />
     <Compile Include="SettingsController.cs" />
@@ -133,6 +148,9 @@
     <Compile Include="WindowsContext.cs" />
     <EmbeddedResource Include="Forms\ContextForm.resx">
       <DependentUpon>ContextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConverserOld.resx">
+      <DependentUpon>ConverserOld.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Converser.resx">
       <DependentUpon>Converser.cs</DependentUpon>

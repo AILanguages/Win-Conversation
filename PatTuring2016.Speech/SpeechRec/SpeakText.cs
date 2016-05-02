@@ -112,9 +112,9 @@ namespace PatTuring2016.Speech.SpeechRec
         {
             AppendThis(text, converser.tbxOutput);
 
-            if (converser.cbxTargetOnly.Checked) return;
+           // if (converser.cbxTargetOnly.Checked) return;
 
-            SpeakWithVoice(text, converser.cbxSource.Text);
+            SpeakWithVoice(text, "USEnglish"); //" converser.cbxSource.Text);
         }
 
         internal void SpeakTextReceived(string text, Converser converser)
@@ -122,7 +122,7 @@ namespace PatTuring2016.Speech.SpeechRec
             AppendThis(text, converser.tbxGeneration);
 
             if (text.StartsWith("New context stored:")) return;
-            SpeakWithVoice(text, converser.GetSingleLanguage());
+            SpeakWithVoice(text, "USEnglish"); //converser.GetSingleLanguage());
         }
     }
 }
