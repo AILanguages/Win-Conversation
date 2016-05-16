@@ -15,6 +15,7 @@ namespace PatTuring2016.Speech.Forms
     public partial class Converser : Form
     {
         private ConversingController _conversingController;
+        private bool _defaultLangauge = true;
 
         public Converser()
         {
@@ -79,11 +80,6 @@ namespace PatTuring2016.Speech.Forms
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         //internal void SetSingleLanguage(string single)
         //{
         //    for (var i = 0; i < ckLstTargets.Items.Count; i++)
@@ -116,6 +112,7 @@ namespace PatTuring2016.Speech.Forms
         private void btnRestart_Click(object sender, EventArgs e)
         {
             GetConversingController().RestartConversation();
+            this.tbxEntry.Text = string.Empty;
             btnClear_Click(sender, e);
         }
 
@@ -145,10 +142,24 @@ namespace PatTuring2016.Speech.Forms
         {
             if (string.IsNullOrEmpty(tbxEntry.Text)) return;
 
+            SetLanguage();
+
             await GetConversingController().HandleSpeech(tbxEntry.Text);
         }
 
-        private void tbxOutput_TextChanged(object sender, EventArgs e)
+        private void SetLanguage()
+        {
+            if (!checkBox1.Checked)
+            {
+                GetConversingController().SpeakEnglish();
+            }
+            else
+            {
+                GetConversingController().SpeakMandarin();
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

@@ -18,14 +18,29 @@ namespace PatTuring2016.Speech.SpeechRec
         private readonly SpeechSynthesizer _speechSynthesizer;
         private readonly PromptBuilder _promptBuilder;
         private AbstractLanguage _abstractLanguage;
+        private string _heard;
+        private string _speak;
 
         public SpeakText(SpeechSynthesizer speechSynthesizer, DefaultLanguage defaultLanguage)
         {
             _speechSynthesizer = speechSynthesizer;
             _promptBuilder = new PromptBuilder();
             _abstractLanguage = defaultLanguage;
+            SetDefaultLanguage();
         }
 
+        public void SetDefaultLanguage()
+        {
+            _heard = "USEnglish";
+            _speak = "UKEnglish";
+        }
+
+        public void SetMandarinLanguage()
+        {
+            _heard = "Mandarin";
+            _speak = "Mandarin";
+        }
+        
         internal void AppendThis(string text, TextBox textBox)
         {
             textBox.AppendText(text);
@@ -114,7 +129,9 @@ namespace PatTuring2016.Speech.SpeechRec
 
            // if (converser.cbxTargetOnly.Checked) return;
 
-            SpeakWithVoice(text, "USEnglish"); //" converser.cbxSource.Text);
+   //         SpeakWithVoice(text, "USEnglish"); //" converser.cbxSource.Text);
+            SpeakWithVoice(text, _heard); //" converser.cbxSource.Text);
+
         }
 
         internal void SpeakTextReceived(string text, Converser converser)
@@ -122,7 +139,9 @@ namespace PatTuring2016.Speech.SpeechRec
             AppendThis(text, converser.tbxGeneration);
 
             if (text.StartsWith("New context stored:")) return;
-            SpeakWithVoice(text, "USEnglish"); //converser.GetSingleLanguage());
+ //           SpeakWithVoice(text, "UKEnglish"); //converser.GetSingleLanguage());
+            SpeakWithVoice(text, _speak); //" converser.cbxSource.Text);
+
         }
     }
 }

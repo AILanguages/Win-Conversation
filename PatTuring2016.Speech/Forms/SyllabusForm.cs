@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------
 
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 using PatTuring2016.Speech.VoiceSyllabus;
 
@@ -18,6 +19,9 @@ namespace PatTuring2016.Speech.Forms
         public SyllabusForm()
         {
             InitializeComponent();
+            Rectangle workingArea = Screen.GetWorkingArea(this);
+            this.Location = new Point(workingArea.Right - Size.Width,
+                                      workingArea.Bottom - Size.Height);
         }
 
         public void Setup(ConversingController conversingController, SyllabusTracker syllabusTracker)

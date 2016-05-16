@@ -123,6 +123,15 @@ namespace PatTuring2016.Speech
             }
         }
 
+        public void SpeakEnglish()
+        {
+            _speakText.SetDefaultLanguage();
+        }
+        public void SpeakMandarin()
+        {
+            _speakText.SetMandarinLanguage();
+        }
+
         internal void MoreContext()
         {
        //     _syllabusTracker.ShowForm();

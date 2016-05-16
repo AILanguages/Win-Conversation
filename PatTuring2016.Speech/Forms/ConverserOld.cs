@@ -4,11 +4,11 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using PatTuring2016.Common;
+using StructureMap;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using PatTuring2016.Common;
-using StructureMap;
 
 namespace PatTuring2016.Speech.Forms
 {

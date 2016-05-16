@@ -97,23 +97,23 @@ namespace PatTuring2016.Speech.SpeechRec
 
         private void RandomNoiseDetected(Converser converser, string text, string confidence)
         {
-            converser.lblError.Text = "Random noise detected.";
-            converser.lblPercent.Text = confidence;
-            converser.lblErrorSound.Text = string.Empty;
-            converser.lblErrorSound.Text = text;
+            //converser.lblError.Text = "Random noise detected.";
+            //converser.lblPercent.Text = confidence;
+            //converser.lblErrorSound.Text = string.Empty;
+            //converser.lblErrorSound.Text = text;
         }
 
         private void UnderThresholdNoiseDetected(Converser converser, string text)
         {
-            converser.lblError.Text = "Under threshold: what's that?";
-            converser.lblPercent.Text = text;
+            //converser.lblError.Text = "Under threshold: what's that?";
+            //converser.lblPercent.Text = text;
         }
 
         private void Init(Converser converser)
         {
-            converser.lblError.Text = string.Empty;
-            converser.lblPercent.Text = string.Empty;
-            converser.lblErrorSound.Text = string.Empty;
+            //converser.lblError.Text = string.Empty;
+            //converser.lblPercent.Text = string.Empty;
+            //converser.lblErrorSound.Text = string.Empty;
         }
     }
 }
